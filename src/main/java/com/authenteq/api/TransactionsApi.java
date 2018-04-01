@@ -2,8 +2,8 @@ package com.authenteq.api;
 
 import com.authenteq.constants.BigchainDbApi;
 import com.authenteq.constants.Operations;
-import com.authenteq.model.GenericCallback;
 import com.authenteq.model.BigChainDBGlobals;
+import com.authenteq.model.GenericCallback;
 import com.authenteq.model.Transaction;
 import com.authenteq.model.Transactions;
 import com.authenteq.util.JsonUtils;
@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * The Class TransactionsApi.
@@ -48,6 +49,7 @@ public class TransactionsApi extends AbstractApi {
 		log.debug( "sendTransaction Call :" + transaction );
 		RequestBody body = RequestBody.create(JSON, JsonUtils.toJson(transaction));
 		Response response = NetworkUtils.sendPostRequest(BigChainDBGlobals.getBaseUrl() + BigchainDbApi.TRANSACTIONS, body);
+		getBody(response);
 		response.close();
 	}
 
@@ -63,7 +65,7 @@ public class TransactionsApi extends AbstractApi {
 	public static Transaction getTransactionById(String id) throws IOException {
 		log.debug( "getTransactionById Call :" + id );
 		Response response = NetworkUtils.sendGetRequest(BigChainDBGlobals.getBaseUrl() + BigchainDbApi.TRANSACTIONS + "/" + id);
-		String body = response.body().string();
+		String body = getBody(response);
 		response.close();
 		return JsonUtils.fromJson(body, Transaction.class);
 	}
@@ -84,8 +86,23 @@ public class TransactionsApi extends AbstractApi {
 		log.debug( "getTransactionsByAssetId Call :" + assetId + " operation " + operation );
 		Response response = NetworkUtils.sendGetRequest(
 				BigChainDBGlobals.getBaseUrl() + BigchainDbApi.TRANSACTIONS + "?asset_id=" + assetId + "&operation=" + operation);
-		String body = response.body().string();
+		String body = getBody(response);
 		response.close();
 		return JsonUtils.fromJson(body, Transactions.class);
+	}
+
+	private static String getBody(Response response) throws IOException {
+		String body = response.body().string();
+		int code = response.code();
+
+		if(String.valueOf(code).startsWith("2")) {
+			log.info("Transaction success, code: " + code + "\n" +
+					"Response body: " + body);
+		} else {
+			throw new RuntimeException("Transaction failed, error code: " + code + "\n" +
+					"Response body: " + body);
+		}
+
+		return body;
 	}
 }
