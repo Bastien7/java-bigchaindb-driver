@@ -1,10 +1,5 @@
 package com.authenteq.api;
 
-import java.io.IOException;
-import java.security.KeyPair;
-import java.util.List;
-
-import com.authenteq.AbstractTest;
 import com.authenteq.builders.BigchainDbTransactionBuilder;
 import com.authenteq.constants.BlockStatus;
 import com.authenteq.constants.Operations;
@@ -13,10 +8,11 @@ import com.authenteq.model.StatusCode;
 import com.authenteq.model.Transaction;
 import net.i2p.crypto.eddsa.EdDSAPrivateKey;
 import net.i2p.crypto.eddsa.EdDSAPublicKey;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.authenteq.builders.BigchainDbConfigBuilder;
+import java.io.IOException;
+import java.security.KeyPair;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
