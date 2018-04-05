@@ -1,16 +1,15 @@
 package com.authenteq.keys;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import java.security.spec.X509EncodedKeySpec;
-
-import org.junit.Test;
-
 import net.i2p.crypto.eddsa.EdDSAPublicKey;
 import net.i2p.crypto.eddsa.Utils;
 import net.i2p.crypto.eddsa.spec.EdDSAPublicKeySpec;
+import org.junit.Test;
+
+import java.security.spec.X509EncodedKeySpec;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 public class PublicKeyTest {
 	 /**

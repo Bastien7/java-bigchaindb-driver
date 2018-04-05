@@ -1,13 +1,5 @@
 package com.authenteq.builders;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import org.slf4j.Logger;
-
 import com.authenteq.constants.BigchainDbApi;
 import com.authenteq.model.ApiEndpoints;
 import com.authenteq.model.BigChainDBGlobals;
@@ -19,7 +11,15 @@ import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The Class BigchainDbConfigBuilder.

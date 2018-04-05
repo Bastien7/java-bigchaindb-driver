@@ -37,7 +37,7 @@ public class StatusesApiTest extends AbstractApiTest
 	@Test
 	public void getTransactionStatusSuccessfully() throws IOException, StatusException {
 		net.i2p.crypto.eddsa.KeyPairGenerator edDsaKpg = new net.i2p.crypto.eddsa.KeyPairGenerator();
-		KeyPair keyPair = edDsaKpg.generateKeyPair();
+		final KeyPair keyPair = edDsaKpg.generateKeyPair();
 		try {
 			ObjectDummy dummyAsset = new ObjectDummy();
 			dummyAsset.setId("id");

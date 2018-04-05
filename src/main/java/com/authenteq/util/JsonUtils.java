@@ -1,9 +1,24 @@
 package com.authenteq.util;
 
 import com.authenteq.json.factory.GsonEmptyCheckTypeAdapterFactory;
-import com.authenteq.json.strategy.*;
-import com.authenteq.model.*;
-import com.google.gson.*;
+import com.authenteq.json.strategy.AssetSerializer;
+import com.authenteq.json.strategy.AssetsDeserializer;
+import com.authenteq.json.strategy.CustomExclusionStrategy;
+import com.authenteq.json.strategy.OutputsDeserializer;
+import com.authenteq.json.strategy.TransactionDeserializer;
+import com.authenteq.json.strategy.TransactionsDeserializer;
+import com.authenteq.json.strategy.VoteDeserializer;
+import com.authenteq.model.Asset;
+import com.authenteq.model.Assets;
+import com.authenteq.model.Outputs;
+import com.authenteq.model.Transaction;
+import com.authenteq.model.Transactions;
+import com.authenteq.model.Votes;
+import com.google.gson.ExclusionStrategy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializer;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

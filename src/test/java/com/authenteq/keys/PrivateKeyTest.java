@@ -1,13 +1,15 @@
 package com.authenteq.keys;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-import java.security.spec.PKCS8EncodedKeySpec;
-import org.junit.Test;
 import net.i2p.crypto.eddsa.EdDSAPrivateKey;
 import net.i2p.crypto.eddsa.Utils;
 import net.i2p.crypto.eddsa.spec.EdDSAPrivateKeySpec;
+import org.junit.Test;
+
+import java.security.spec.PKCS8EncodedKeySpec;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 public class PrivateKeyTest {
 

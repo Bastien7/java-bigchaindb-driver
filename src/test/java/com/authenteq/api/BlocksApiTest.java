@@ -1,29 +1,20 @@
 package com.authenteq.api;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import java.io.IOException;
-import java.security.KeyPair;
-import java.security.spec.InvalidKeySpecException;
-import java.util.Map;
-import java.util.TreeMap;
-
-import com.authenteq.AbstractTest;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
-import com.authenteq.api.AssetsApi;
-import com.authenteq.builders.BigchainDbConfigBuilder;
 import com.authenteq.builders.BigchainDbTransactionBuilder;
 import com.authenteq.constants.BlockStatus;
 import com.authenteq.constants.Operations;
 import com.authenteq.model.Account;
 import com.authenteq.model.Transaction;
-
 import net.i2p.crypto.eddsa.EdDSAPrivateKey;
 import net.i2p.crypto.eddsa.EdDSAPublicKey;
+import org.junit.Test;
+
+import java.io.IOException;
+import java.security.spec.InvalidKeySpecException;
+import java.util.Map;
+import java.util.TreeMap;
+
+import static org.junit.Assert.assertFalse;
 
 /**
  * The Class BlocksApiTest.

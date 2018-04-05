@@ -39,7 +39,11 @@ import org.interledger.cryptoconditions.types.Ed25519Sha256Fulfillment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.security.*;
+import java.security.InvalidKeyException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.Signature;
+import java.security.SignatureException;
 import java.util.ArrayList;
 import java.util.List;
 

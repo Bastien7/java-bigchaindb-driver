@@ -2,8 +2,8 @@ package com.authenteq.api;
 
 import com.authenteq.constants.BigchainDbApi;
 import com.authenteq.constants.BlockStatus;
-import com.authenteq.model.Block;
 import com.authenteq.model.BigChainDBGlobals;
+import com.authenteq.model.Block;
 import com.authenteq.util.JsonUtils;
 import com.authenteq.util.NetworkUtils;
 import com.google.gson.reflect.TypeToken;

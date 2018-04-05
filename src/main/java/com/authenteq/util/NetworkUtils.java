@@ -1,8 +1,12 @@
 package com.authenteq.util;
 
-import com.authenteq.model.GenericCallback;
 import com.authenteq.model.BigChainDBGlobals;
-import okhttp3.*;
+import com.authenteq.model.GenericCallback;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 import java.io.IOException;
 

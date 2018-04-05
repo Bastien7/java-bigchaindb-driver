@@ -1,15 +1,6 @@
 package com.authenteq.api;
 
-import static org.junit.Assert.assertTrue;
-
-import java.io.IOException;
-import java.security.KeyPair;
-import java.util.Map;
-import java.util.TreeMap;
-
 import com.authenteq.builders.BigchainDbTransactionBuilder;
-import com.authenteq.json.strategy.AssetSerializer;
-import com.authenteq.model.Asset;
 import com.authenteq.model.Assets;
 import com.authenteq.model.StatusCode;
 import com.authenteq.model.Transaction;
@@ -17,7 +8,13 @@ import net.i2p.crypto.eddsa.EdDSAPrivateKey;
 import net.i2p.crypto.eddsa.EdDSAPublicKey;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.security.KeyPair;
+import java.util.Map;
+import java.util.TreeMap;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * The Class AssetsApiTest.
@@ -30,7 +27,7 @@ public class AssetsApiTest extends AbstractApiTest
 	@Test
 	public void testAssetSearch()
 	{
-		String uuid = getUUID();
+		final String uuid = getUUID();
 		System.err.println( "AssetApiTest.testAssetSearch.uuid " + uuid );
 		try {
 			// create transaction with unique asset

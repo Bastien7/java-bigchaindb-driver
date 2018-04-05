@@ -271,14 +271,16 @@ import net.i2p.crypto.eddsa.spec.EdDSANamedCurveTable;
 import net.i2p.crypto.eddsa.spec.EdDSAParameterSpec;
 import net.i2p.crypto.eddsa.spec.EdDSAPrivateKeySpec;
 import net.i2p.crypto.eddsa.spec.EdDSAPublicKeySpec;
-
 import org.apache.commons.codec.binary.Base64;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.interledger.cryptoconditions.types.Ed25519Sha256Condition;
 import org.interledger.cryptoconditions.types.Ed25519Sha256Fulfillment;
 import org.junit.Test;
 
-import java.security.*;
+import java.security.KeyPair;
+import java.security.MessageDigest;
+import java.security.Security;
+import java.security.Signature;
 import java.util.TreeMap;
 
 import static junit.framework.Assert.assertEquals;

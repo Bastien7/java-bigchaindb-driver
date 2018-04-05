@@ -1,6 +1,10 @@
 package com.authenteq.json.strategy;
 
-import com.authenteq.model.*;
+import com.authenteq.model.Asset;
+import com.authenteq.model.Input;
+import com.authenteq.model.Output;
+import com.authenteq.model.Transaction;
+import com.authenteq.model.Transactions;
 import com.authenteq.util.JsonUtils;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;

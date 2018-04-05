@@ -1,36 +1,38 @@
 package com.authenteq.builders;
 
+import com.authenteq.api.TransactionsApi;
+import com.authenteq.constants.Operations;
+import com.authenteq.json.strategy.TransactionDeserializer;
+import com.authenteq.json.strategy.TransactionsDeserializer;
+import com.authenteq.model.Asset;
+import com.authenteq.model.Condition;
+import com.authenteq.model.Details;
+import com.authenteq.model.FulFill;
+import com.authenteq.model.GenericCallback;
+import com.authenteq.model.Input;
+import com.authenteq.model.Output;
+import com.authenteq.model.Transaction;
+import com.authenteq.util.DriverUtils;
+import com.authenteq.util.JsonUtils;
+import com.authenteq.util.KeyPairUtils;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSerializer;
+import net.i2p.crypto.eddsa.EdDSAEngine;
+import net.i2p.crypto.eddsa.EdDSAPrivateKey;
+import net.i2p.crypto.eddsa.EdDSAPublicKey;
+import org.apache.commons.codec.binary.Base64;
+import org.bouncycastle.jcajce.provider.digest.SHA3;
+import org.interledger.cryptoconditions.types.Ed25519Sha256Condition;
+import org.interledger.cryptoconditions.types.Ed25519Sha256Fulfillment;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.Signature;
 import java.security.SignatureException;
-
-import com.authenteq.json.strategy.TransactionDeserializer;
-import com.authenteq.json.strategy.TransactionsDeserializer;
-import com.google.gson.*;
-import org.apache.commons.codec.binary.Base64;
-import org.bouncycastle.jcajce.provider.digest.SHA3;
-import org.interledger.cryptoconditions.types.Ed25519Sha256Condition;
-import org.interledger.cryptoconditions.types.Ed25519Sha256Fulfillment;
-import com.authenteq.api.TransactionsApi;
-import com.authenteq.constants.Operations;
-import com.authenteq.model.Asset;
-import com.authenteq.model.Condition;
-import com.authenteq.model.Details;
-import com.authenteq.model.FulFill;
-import com.authenteq.model.Input;
-import com.authenteq.model.Output;
-import com.authenteq.model.Transaction;
-import com.authenteq.model.GenericCallback;
-import com.authenteq.util.DriverUtils;
-import com.authenteq.util.JsonUtils;
-import com.authenteq.util.KeyPairUtils;
-import net.i2p.crypto.eddsa.EdDSAEngine;
-import net.i2p.crypto.eddsa.EdDSAPrivateKey;
-import net.i2p.crypto.eddsa.EdDSAPublicKey;
-import org.slf4j.LoggerFactory;
 
 /**
  * The Class BigchainDbTransactionBuilder.

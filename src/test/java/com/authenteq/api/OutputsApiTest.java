@@ -1,24 +1,17 @@
 package com.authenteq.api;
 
-import static org.junit.Assert.assertTrue;
+import com.authenteq.model.Account;
+import com.authenteq.model.Output;
+import com.authenteq.util.JsonUtils;
+import com.authenteq.util.KeyPairUtils;
+import net.i2p.crypto.eddsa.EdDSAPublicKey;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Iterator;
 
-import com.authenteq.AbstractTest;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
-import com.authenteq.api.AssetsApi;
-import com.authenteq.builders.BigchainDbConfigBuilder;
-import com.authenteq.model.Account;
-import com.authenteq.model.Output;
-import com.authenteq.util.DriverUtils;
-import com.authenteq.util.JsonUtils;
-import com.authenteq.util.KeyPairUtils;
-
-import net.i2p.crypto.eddsa.EdDSAPublicKey;
+import static org.junit.Assert.assertTrue;
 
 
 /**

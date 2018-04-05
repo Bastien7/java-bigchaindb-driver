@@ -1,9 +1,5 @@
 package com.authenteq.model;
 
-import com.google.gson.annotations.SerializedName;
-
-
-
 /**
  * The Class Status.
  */

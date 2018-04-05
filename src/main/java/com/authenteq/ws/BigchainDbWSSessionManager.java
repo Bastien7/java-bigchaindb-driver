@@ -1,6 +1,8 @@
 package com.authenteq.ws;
 
-import java.net.URI;
+import com.authenteq.util.ScannerUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.websocket.ClientEndpoint;
 import javax.websocket.CloseReason;
@@ -10,9 +12,7 @@ import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.WebSocketContainer;
-import com.authenteq.util.ScannerUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.net.URI;
 
 /**
  * The Class BigchainDbWSSessionManager.
